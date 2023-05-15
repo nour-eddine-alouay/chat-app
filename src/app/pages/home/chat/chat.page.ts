@@ -20,6 +20,7 @@ export class ChatPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log("chat's here!")
   }
 
   sendMessage() {

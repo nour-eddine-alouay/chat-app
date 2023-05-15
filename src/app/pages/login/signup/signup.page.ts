@@ -15,7 +15,7 @@ export class SignupPage implements OnInit {
   isLoading: boolean =false;
 
   constructor(
-    private router: Router, 
+    private router: Router,
     private authService: AuthService,
     private alertController: AlertController
   )
@@ -27,13 +27,13 @@ export class SignupPage implements OnInit {
 
   initForm() {
     this.signupForm = new FormGroup({
-      username: new FormControl('', 
+      username: new FormControl('',
         {validators: [Validators.required]}
       ),
-      email: new FormControl('', 
+      email: new FormControl('',
         {validators: [Validators.required, Validators.email]}
       ),
-      password: new FormControl('', 
+      password: new FormControl('',
         {validators: [Validators.required, Validators.minLength(8)]}
       ),
     });

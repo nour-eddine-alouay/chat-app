@@ -86,6 +86,7 @@ async logout(){
     await this.fireAuth.signOut();
     //await this.storage.removeStorage('chat_app_uid');
     this._uid.next(null);
+    console.log("service logout done!")
     return true;
   }catch(e){
     throw(e);

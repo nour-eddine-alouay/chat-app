@@ -1,7 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import {ModalController, PopoverController} from '@ionic/angular'
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { ChatService } from '../services/chat/chat.service';
 
 @Component({
   selector: 'app-home',
@@ -10,31 +12,51 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  // @ViewChild('new_chat') modal: ModalController | undefined;
-  // @ViewChild('popover') popover: PopoverController | undefined;
+  @ViewChild('new_chat') modal: ModalController | undefined;
+  @ViewChild('popover') popover: PopoverController | undefined;
 
   segment = "chats";
   open_new_chat = false;
-  users = [
-    {id: 1, name: "kingsley", photo: "https://i.pravatar.cc/380"},
-    {id: 1, name: "Avery", photo: "https://i.pravatar.cc/381"},
-    {id: 3, name: "A. Mohamed", photo: "https://i.pravatar.cc/382"}
-  ];
-  chatRooms = [
-    {id: 1, name: "Aksel", photo: "https://i.pravatar.cc/381", lastmessage: "do whatever you want I don't care!", time:"18:04"},
-    {id: 2, name: "Samir", photo: "https://i.pravatar.cc/382", lastmessage: "thanks", time:"01:15"},
-    {id: 3, name: "Halabi Jr", photo: "https://i.pravatar.cc/383", lastmessage: "come later then", time:"06:15"},
-    {id: 4, name: "Ziad", photo: "https://i.pravatar.cc/384", lastmessage: "since when?", time:"01:54"},
-    {id: 5, name: "Nabil", photo: "https://i.pravatar.cc/385", lastmessage: "ok", time:"07:23"},
-    {id: 6, name: "Yu Sam", photo: "https://i.pravatar.cc/386", lastmessage: "kk don't care", time:"20:06"}
-  ]
 
-  constructor(private router: Router) {
+  users: Observable<any>;
+  // users = [
+  //   {id: 1, name: "kingsley", photo: "https://i.pravatar.cc/380"},
+  //   {id: 1, name: "Avery", photo: "https://i.pravatar.cc/381"},
+  //   {id: 3, name: "A. Mohamed", photo: "https://i.pravatar.cc/382"}
+  // ];
+  chatRooms: Observable<any>;
+  // chatRooms = [
+  //   {id: 1, name: "Aksel", photo: "https://i.pravatar.cc/381", lastmessage: "do whatever you want I don't care!", time:"18:04"},
+  //   {id: 2, name: "Samir", photo: "https://i.pravatar.cc/382", lastmessage: "thanks", time:"01:15"},
+  //   {id: 3, name: "Halabi Jr", photo: "https://i.pravatar.cc/383", lastmessage: "come later then", time:"06:15"},
+  //   {id: 4, name: "Ziad", photo: "https://i.pravatar.cc/384", lastmessage: "since when?", time:"01:54"},
+  //   {id: 5, name: "Nabil", photo: "https://i.pravatar.cc/385", lastmessage: "ok", time:"07:23"},
+  //   {id: 6, name: "Yu Sam", photo: "https://i.pravatar.cc/386", lastmessage: "kk don't care", time:"20:06"}
+  // ]
+
+  constructor(
+    private router: Router,
+    private chatService: ChatService,
+  ) {
     
   }
 
+  ngOnInit() {
+    this.getRooms();
+  }
+
+  getRooms() {
+    this.chatService.getChatRooms();
+    this.chatRooms = this.chatService.chatRooms;
+    console.log('chat rooms: ',this.chatRooms)
+  }
+
   logout() {
-    // this.popover?.dismiss();
+    this.popover.dismiss();
+    console.log("logout started");
+    this.chatService.auth.logout();
+    this.router.navigateByUrl('/login');
+    console.log("logout over");
   }
 
   onSegmentChanged(event: any){
@@ -46,15 +68,36 @@ export class HomePage {
   }
 
   cancel() {
+    console.log("cancel!")
     this.open_new_chat = false;
   }
 
   newChat() {
     this.open_new_chat = true;
+    if(!this.users) this.getUsers();
   }
 
-  startChat(item: any) {
+  getUsers() {
+    this.chatService.getUsers();
+    this.users = this.chatService.users;
 
+  }
+
+  async startChat(item) {
+    try {
+      const room = await this.chatService.createChatRoom(item?.uid);
+      console.log('room', room)
+      this.cancel();
+
+      const navData: NavigationExtras = {
+        queryParams: {
+          name: item?.name,
+        }
+      };
+      this.router.navigate(['/', 'chats', room?.id], navData);
+    } catch( e ) {
+      console.log(e)
+    }
   }
 
   getChat(item: any) {
