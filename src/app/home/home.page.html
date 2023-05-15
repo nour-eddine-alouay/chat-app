@@ -8,7 +8,7 @@
         <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
-    <ion-popover #popover trigger="popover" [dismissOnSelect]="true">
+    <ion-popover #popover trigger="popover">
       <ng-template>
         <ion-content>
           <ion-list>
@@ -38,7 +38,7 @@
 
 <ion-content color="light" class="segment">
 
-  <ion-list *ngIf="segment == 'chats' && (chatRooms) as rooms" >
+  <ion-list *ngIf="segment === 'chats' && (chatRooms) as rooms" >
     <ion-item 
     *ngFor="let item of rooms"
     (click)="getChat(item)"

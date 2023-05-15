@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Observable } from 'rxjs';
 import {ModalController, PopoverController} from '@ionic/angular'
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -29,12 +30,18 @@ export class HomePage {
     {id: 6, name: "Yu Sam", photo: "https://i.pravatar.cc/386", lastmessage: "kk don't care", time:"20:06"}
   ]
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    private authService: AuthService,
+  ) {
     
   }
 
   logout() {
-    // this.popover?.dismiss();
+    console.log("logout started")
+    this.authService.logout();
+    this.router.navigateByUrl('/login');
+    console.log("logout over")
   }
 
   onSegmentChanged(event: any){
