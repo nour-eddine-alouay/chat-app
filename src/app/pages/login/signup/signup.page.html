@@ -33,7 +33,7 @@
           class="ion-text-left"
           color="danger"
           *ngIf="!signupForm.get('username')?.touched && !signupForm?.get('username')?.valid">
-          <p class="error">*Please enter Username</p>
+          <p class="error">*Please enter your user name</p>
         </ion-text>
   
         <ion-item class="ion-margin-vertical">
@@ -49,7 +49,7 @@
           class="ion-text-left"
           color="danger"
           *ngIf="!signupForm.get('email')?.touched && !signupForm?.get('username')?.valid">
-          <p class="error">*Please enter proper Email Address</p>
+          <p class="error">*Please enter a proper Email Address</p>
         </ion-text>
   
         <ion-item class="ion-margin-vertical">
@@ -86,7 +86,7 @@
           <ion-col size="12" class="alignItems">
             <div align=left>
               <ion-checkbox></ion-checkbox>
-              <ion-note>I accept the policy and terms</ion-note>
+              <ion-note>I accept the terms of use and policy</ion-note>
             </div>
           </ion-col>
         </ion-row>

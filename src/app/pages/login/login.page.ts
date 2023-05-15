@@ -19,6 +19,7 @@ export class LoginPage implements OnInit {
     this.initForm();
   }
   ngOnInit(): void {
+    
   }
 
   initForm() {
