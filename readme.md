@@ -22,9 +22,9 @@
 
 # Views
 <p float="left">
-  <img src="screenshots/login.png" width="200"/>
-  <img src="screenshots/sign_up.png" width="200"/>
-  <img src="screenshots/list_of_conversations.png" width="200"/>
+  <img src="screenshots/login.png" width="150"/>
+  <img src="screenshots/sign_up.png" width="150"/>
+  <img src="screenshots/list_of_conversations.png" width="150"/>
 </p>
 
 
