@@ -22,6 +22,10 @@
 
 # Views
 
+![img1](screenshots/login.png) | ![img2](screenshots/sign up.png) | ![img3](screenshots/list_of_conversations.png)
+
+
+
 # Overview
 ## 🗝️ About FireAuth
 The basic purpose of any **auth** implementation is, without a doubt, to deliver a secure and seamless user experience.  
