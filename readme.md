@@ -1,6 +1,6 @@
 # ChatApp
 
-![Chat App Icon](chat-app/src/assets/icon/favicon.png)
+![Chat App Icon](AppIcons/Assets.xcassets/AppIcon.appiconset/128.png)
   *For a seamless messaging, real-time notifications, and a user-friendly interface for effortless communication.*
 
 ---
