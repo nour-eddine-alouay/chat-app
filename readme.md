@@ -1,6 +1,6 @@
 # ChatApp
 
-![Chat App Icon](src\assets\images\icon.png)
+![Chat App Icon](chat-app/src/assets/icon/favicon.png)
   *For a seamless messaging, real-time notifications, and a user-friendly interface for effortless communication.*
 
 ---
