@@ -22,7 +22,7 @@
 
 # Views
 
-![][img1](screenshots/login.png) | ![][img2](screenshots/sign_up.png) | ![][img3](screenshots/list_of_conversations.png)
+![](screenshots/login.png) | ![](screenshots/sign_up.png) | ![](screenshots/list_of_conversations.png)
 
 
 
