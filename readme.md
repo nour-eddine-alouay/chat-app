@@ -21,11 +21,11 @@
 * Supported OS: Android 5.1+, Android 7+ (with google chrome, IOS 11+)
 
 # Views
-
-![](screenshots/login.png) | ![](screenshots/sign_up.png) | ![](screenshots/list_of_conversations.png)
-
-
-
+<p float="left">
+  <img src="screenshots/login.png" width="100"/>
+  <img src="screenshots/sign_up.png" width="100"/>
+  <img src="screenshots/list_of_conversations.png" width="100"/>
+</p>
 # Overview
 ## 🗝️ About FireAuth
 The basic purpose of any **auth** implementation is, without a doubt, to deliver a secure and seamless user experience.  
