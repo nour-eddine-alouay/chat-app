@@ -1,6 +1,6 @@
 # ChatApp
 
-![Chat App Icon](AppIcons/Assets.xcassets/AppIcon.appiconset/128.png)
+![Chat App Icon](AppIcons/appstore.png)
   *For a seamless messaging, real-time notifications, and a user-friendly interface for effortless communication.*
 
 ---
@@ -22,7 +22,7 @@
 
 # Views
 
-![img1](screenshots/login.png) | ![img2](screenshots/sign_up.png) | ![img3](screenshots/list_of_conversations.png)
+![][img1](screenshots/login.png) | ![][img2](screenshots/sign_up.png) | ![][img3](screenshots/list_of_conversations.png)
 
 
 
