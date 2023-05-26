@@ -87,7 +87,9 @@ The startChat() function initiates a chat session between users. It handles the 
 
 ## getChat
 The getChat() function retrieves the current chatroom, allowing users to access and interact with the active chat session. It provides the necessary data and context for displaying the chatroom interface, including participants' details, message history, and other relevant information. By utilizing this function, users can join existing chatrooms and resume their conversations seamlessly.
-
+<h1>Color Palette</h1>
+<img src="screenshots
+/color_palette.png" width="200"/>
 
 
 # License
