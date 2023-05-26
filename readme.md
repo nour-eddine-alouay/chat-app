@@ -26,6 +26,8 @@
   <img src="screenshots/sign_up.png" width="200"/>
   <img src="screenshots/list_of_conversations.png" width="200"/>
 </p>
+
+
 # Overview
 ## 🗝️ About FireAuth
 The basic purpose of any **auth** implementation is, without a doubt, to deliver a secure and seamless user experience.  
@@ -90,6 +92,7 @@ The getChat() function retrieves the current chatroom, allowing users to access 
 <h1>Color Palette</h1>
 <div style="display: flex; justify-content: center;">
   <img src="screenshots/color_palette.png" width="800" />
+  <img src="screenshots/dark_color_palette.png" width="800" />
 </div>
 
 
